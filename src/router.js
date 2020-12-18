@@ -1,29 +1,36 @@
 import vueRouter from 'vue-router'
-import User from './components/User' 
-import UserBalance from './components/UserBalance'
-import App from'./App'
+import Profile from './components/Profile'
+import Partners from './components/Partners'
+import Registro from './components/Registro'
+import App from './App'
 
 const router = new vueRouter({
-    mode:'history',
+    mode: 'history',
     base: __dirname,
-    routes:[
+    routes: [
         {
-        path: '/',
-        name: "root",
-        component: App
+            path: '/',
+            name: "root",
+            component: App
         },
 
         {
-        path: '/user/:username', // "/user/{username}"
-        name: "user", 
-        component: User
+            path: '/hotel/profile/:email',
+            name: "user_profile",
+            component: Profile
         },
 
         {
-        path:'/user/balance/:username',
-        name: "user_balance",
-        component: UserBalance
+            path: '/hotel/partners/:email',
+            name: "user_partners",
+            component: Partners
         },
+        {
+            path: '/registro',
+            name: "registro",
+            component: Registro
+        }
     ]
 })
+
 export default router
